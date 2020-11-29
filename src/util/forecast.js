@@ -12,7 +12,7 @@ const forecast = (lattitude,longitude,callback)=>{
         }
         else{
             const current = body.current
-            callback(undefined,current.condition.text+". It is currently "+current.temp_c+" degrees out. There is "+current.precip_mm+"% chance of rain")
+            callback(undefined,current.condition.text+". It is currently "+current.temp_c+" degrees out. There is "+current.precip_mm+"% chance of rain",current.condition.icon)
         }
     })
 }

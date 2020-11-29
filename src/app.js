@@ -58,16 +58,16 @@ app.get('/weather',(req,res) => {
             if(error){
                 return res.send({error})
             }
-            forecast(encodeURIComponent(latitude),encodeURIComponent(longitude),(error,foredata)=>{
+            forecast(encodeURIComponent(latitude),encodeURIComponent(longitude),(error,foredata,icon)=>{
                 if(error){
                     return res.send({error})
                 }
                 res.send({
                     forecast:foredata,
                     location:location,
-                    address:req.query.address
+                    address:req.query.address,
+                    icon_img:icon
                 })
-        
             })
         })
 })
