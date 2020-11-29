@@ -11,6 +11,7 @@ weatherForm.addEventListener('submit',(e)=>{
     
     msgone.textContent = 'Loading...'
     msgtwo.textContent = ''
+    icon.src=''
 
     fetch('/weather?address=' + location).then((response)=>{
     response.json().then((data)=>{
